@@ -93,14 +93,27 @@ document.addEventListener('DOMContentLoaded', function() {
 <body>
 
   <nav>
-    <div class="logo">Ádrisson Piber | Analista de Dados </div>
-    <ul>
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#sobre">Sobre mim</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
+  <div class="logo">Ádrisson Piber | Dados & Estratégia</div>
+  <ul>
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#sobre">Sobre mim</a></li>
+    <li><a href="#projetos">Projetos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+  <script>
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('nav ul');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
 
   <section id="home" class="hero">
     <div class="hero-text">
