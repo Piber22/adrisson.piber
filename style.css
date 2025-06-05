@@ -52,7 +52,7 @@ nav {
 nav .logo {
   font-size: 22px;
   font-weight: 300;
-  color: #ffffff;
+  color: #00d8ff;
 }
 
 nav ul {
@@ -112,6 +112,7 @@ nav ul li a.active {
     display: flex; /* Mostrar hamburger */
   }
 }
+
 /* HERO */
 .hero {
   width: 100vw; /* 100% da largura da viewport */
@@ -122,7 +123,7 @@ nav ul li a.active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: clamp(15vh, 10vh, 20vh);
+  padding-top: clamp(15vh, 5vh, 15vh);
   text-align: center;
   color: #fff;
 
@@ -212,9 +213,11 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 250px 60px;
+  padding: 60px 60px;
   background-color: #FFFFFF;
+  flex-direction: row;
 }
+
 .intro {
   margin-bottom: 1.2em; /* espaço abaixo de cada parágrafo */
   line-height: 1.5;
@@ -274,6 +277,27 @@ section {
   color: #5DC5EC;
 }
 
+/* --- MEDIA QUERY: MOBILE --- */
+@media (max-width: 768px) {
+  .sobre-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sobre-imagem {
+    margin-bottom: 20px;
+  }
+
+  .sobre-imagem img {
+    max-width: 400px;
+    height: auto;
+  }
+
+  .sobre-container {
+    padding: 0 20px;
+  }
+}
 /* PROJETOS CARROSSEL */
 /* ===================== SEÇÃO PROJETOS ===================== */
 #projetos {
