@@ -22,7 +22,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  max-width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -285,6 +285,12 @@ section {
 
 /* --- MEDIA QUERY: MOBILE --- */
 @media (max-width: 768px) {
+  #sobre {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
   .sobre-wrapper {
     flex-direction: column;
     align-items: center;
@@ -293,7 +299,7 @@ section {
   }
 
   .sobre-container {
-    padding: 0 0px; /* margens laterais discretas no mobile */
+    padding: 0 16px; /* margens laterais discretas no mobile */
     text-align: justify;
     max-width: 100%; /* Garante que ocupe tudo */
     margin: 0 auto; /* centraliza se precisar */
@@ -305,11 +311,15 @@ section {
   }
 
   .sobre-imagem {
+
     margin-bottom: 0px;
   }
 
   .sobre-imagem img {
-    max-width: 400px;
+    transform: none; /* Remove o deslocamento no mobile */
+    margin: 0 auto;   /* Centraliza horizontalmente */
+    display: block;
+    max-width: 90%;
     height: auto;
   }
 
@@ -329,22 +339,19 @@ section {
 /* ===================== SEÇÃO PROJETOS ===================== */
 
 @media (max-width: 768px) {
-  .projetos-carousel, .carousel-inner {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+  .carousel-container {
+    gap: 16px; /* reduz o espaço entre os cards */
+    padding: 0 10px;
   }
-  body {
-    overflow-x: hidden;
+  .carousel {
+    max-width: 100vh;
+    overflow-x: auto;
+    padding: 0;
   }
-
   #projetos {
-  overflow-x: hidden;
-  width: 100vw;
-  padding: 20px 10px;
-  box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 60px 10px;
   }
-
   #projetos h2 {
     padding-top: 15vh;
     font-size: 39px !important;
@@ -357,21 +364,22 @@ section {
     margin: 0 auto;
     text-align: center;
   }
-
   #projetos p {
     width: 90vw !important;
     margin: 0 auto;
     text-align: center;
   }
-
   .projeto-card {
-  transition: none;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 90vw !important;
+    min-width: 85vw; /* não ocupa 100% da tela para evitar overflow */
+    max-width: 90vw;
+    margin: 0 auto 20px;
   }
-
+  .carousel-track {
+    overflow-x: auto;
+    padding: 0 5px;
+  }
 }
+
 #projetos {
   background:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0.1%, #0d0d0d 100%),
