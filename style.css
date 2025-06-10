@@ -316,11 +316,12 @@ section {
   }
 
   .sobre-imagem img {
-    transform: none; /* Remove o deslocamento no mobile */
+    transform: none;
     margin: 0 auto;   /* Centraliza horizontalmente */
     display: block;
-    max-width: 90%;
+    max-width: 60%;
     height: auto;
+    margin-bottom: 20px;
   }
 
   .sobre-container p,
@@ -379,8 +380,8 @@ section {
     margin: 0 auto;
   }
   #projetos h3 {
-    width: 90vw !important;
-    margin: 0 auto;
+    width: 100vw !important;
+    margin: 0;
     text-align: left !important;
   }
   #projetos p {
@@ -404,8 +405,9 @@ section {
     padding: 0 5px;
   }
   .projeto-card p {
-    width: 100%;
-    padding: 0 10px;
+    margin: 0 !important;
+    width: 100% !important;
+    padding: 0 !important;
     box-sizing: border-box;
   }
 }
@@ -527,7 +529,6 @@ section {
 }
 
 .projeto-card h3 {
-
   color: #00d8ff;
   margin-bottom: 10px;
   font-size: 24px;
@@ -557,7 +558,6 @@ section {
 
 /* ===== Cabeçalho do card com título e ações ===== */
 .card-header {
-
   display: flex;
   align-items: center;
   justify-content: space-between;
