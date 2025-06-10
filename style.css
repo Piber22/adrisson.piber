@@ -339,9 +339,28 @@ section {
 /* ===================== SEÇÃO PROJETOS ===================== */
 
 @media (max-width: 768px) {
-  .carousel-container {
-    gap: 16px; /* reduz o espaço entre os cards */
+  /* Garantir que nenhum elemento exceda a tela */
+  body, html {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  .carousel-wrapper {
+    overflow-x: hidden;
     padding: 0 10px;
+  }
+
+  /* Carrossel Projetos */
+  .carousel-track {
+    overflow-x: auto !important;
+    padding: 0 5px;
+  }
+  .carousel-container {
+    transform: scale(0.6);
+    transform-origin: top center;
+    gap: 20px;
+    padding: 0 10px;
+    margin: 0 auto;
+    flex-wrap: nowrap;
   }
   .carousel {
     max-width: 100vh;
@@ -362,7 +381,7 @@ section {
   #projetos h3 {
     width: 90vw !important;
     margin: 0 auto;
-    text-align: center;
+    text-align: left !important;
   }
   #projetos p {
     width: 90vw !important;
@@ -370,13 +389,27 @@ section {
     text-align: center;
   }
   .projeto-card {
-    min-width: 85vw; /* não ocupa 100% da tela para evitar overflow */
+    flex: 0 0 auto;
+    min-width: 280px;
     max-width: 90vw;
-    margin: 0 auto 20px;
+    box-sizing: border-box;
+    padding: 20px 10px; /* reduz padding lateral no mobile */
+  }
+  .projeto-card img {
+    width: 100%;           /* a imagem encolhe junto com o card */
+    height: auto;          /* mantém proporção */
   }
   .carousel-track {
     overflow-x: auto;
     padding: 0 5px;
+  }
+  .projeto-card p {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  .projeto-card h3 {
+    padding: 0 10px;
   }
 }
 
