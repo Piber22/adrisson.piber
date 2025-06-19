@@ -205,7 +205,6 @@ nav ul li a.active {
 
 /* SECTIONS */
 section {
-  min-height: 100vh;
   padding: 120px 40px 60px;
   display: flex;
   align-items: center;
@@ -788,7 +787,6 @@ section {
     width: 90vw;
     text-align: center;
   }
-  }
   .card-header h3 {
     margin: 0;
     font-size: 18px;
@@ -802,8 +800,8 @@ section {
     text-align: justify;
   }
   .projeto-card {
-    min-width: 90%;
-    max-width: 90%;
+    min-width: 100%;
+    max-width: 100%;
     min-height: auto;
     max-height: none;
     margin: 0 auto;
@@ -836,9 +834,8 @@ section {
   padding-top: 0px;
 }
 #contato {
-  max-height: 300px !important;
   background-color: #0d0d0d;
-  padding-top: 0;
+  padding-top: 1 rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
