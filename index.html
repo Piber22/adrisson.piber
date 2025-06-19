@@ -358,6 +358,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 </script>
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('#sobre, #projetos, #contato');
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Quando a seção entra na tela, adiciona classe que ativa animação
+        entry.target.classList.add('animate');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+});
+</script>
 </body>
 </html>
