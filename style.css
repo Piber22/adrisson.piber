@@ -347,7 +347,7 @@ section {
   }
   .carousel-wrapper {
     overflow-x: hidden;
-    padding: 0 10px;
+    padding: 0;
   }
 
   /* Carrossel Projetos */
@@ -359,9 +359,10 @@ section {
     transform: scale(0.6);
     transform-origin: top center;
     gap: 20px;
-    padding: 0 10px;
+    padding: 0; /* remova para não causar deslocamento */
     margin: 0 auto;
     flex-wrap: nowrap;
+    display: flex;
   }
   .carousel {
     max-width: 100vh;
@@ -384,31 +385,36 @@ section {
     margin: 0;
     text-align: left !important;
   }
-  #projetos p {
+  .project-description {
     width: 90vw !important;
+  }
+  #projetos p {
     margin: 0 auto;
     text-align: center;
   }
   .projeto-card {
     flex: 0 0 auto;
-    min-width: 280px;
-    max-width: 90vw;
-    box-sizing: border-box;
-    padding: 20px 10px; /* reduz padding lateral no mobile */
+    min-width: 80vw; /* ou 90vw */
+    max-width: 80vw;
+    flex-shrink: 0;
+
   }
   .projeto-card img {
     width: 100%;           /* a imagem encolhe junto com o card */
     height: auto;          /* mantém proporção */
   }
   .carousel-track {
-    overflow-x: auto;
+    overflow-x: auto !important;
     padding: 0 5px;
+    padding-right: 0px; /* espaço extra para exibir o último card */
   }
   .projeto-card p {
-    margin: 0 !important;
-    width: 100% !important;
-    padding: 0 !important;
+    padding: 0 0px;
     box-sizing: border-box;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 !important;
   }
 }
 
