@@ -413,8 +413,62 @@ section {
   }
 }
 
-/* PROJETOS CARROSSEL */
 /* ===================== SEÇÃO PROJETOS ===================== */
+
+/* ===================== INICIO ANIMAÇÕES ===================== */
+@keyframes fadeUpProjetos {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#projetos h2,
+.project-description,
+.projeto-card,
+.carousel-btn,
+.carousel-indicators {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+#projetos.animate h2 {
+  animation: fadeUpProjetos 2s ease-out forwards;
+  animation-delay: 1s;
+}
+
+#projetos.animate .project-description {
+  animation: fadeUpProjetos 2s ease-out forwards;
+  animation-delay: 2s;
+}
+
+#projetos.animate .projeto-card {
+  animation: fadeUpProjetos 2s ease-out forwards;
+  animation-delay: 3s;
+}
+#projetos.animate .carousel-btn,.carousel-indicators {
+  animation: fadeUpProjetos 2s ease-out forwards;
+  animation-delay: 3s;
+}
+
+#projetos.animate .projeto-card:nth-child(1) {
+  animation-delay: 3s;
+}
+
+#projetos.animate .projeto-card:nth-child(2) {
+  animation-delay: 4s;
+}
+
+#projetos.animate .projeto-card:nth-child(3) {
+  animation-delay: 5s;
+}
+
+/* ===================== FIM ANIMAÇÕES ===================== */
 
 
 #projetos {
@@ -945,6 +999,40 @@ section {
 .section {
   padding-top: 0px;
 }
+
+@keyframes fadeUpcontato {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#contato h2,
+#contato p,
+.contato-botoes {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+#contato.animate h2 {
+  animation: fadeUpProjetos 2s ease-out forwards;
+  animation-delay: 1s;
+}
+#contato.animate p {
+  animation: fadeUpProjetos 2s ease-out forwards;
+  animation-delay: 2s;
+}
+#contato.animate .contato-botoes {
+  animation: fadeUpProjetos 2s ease-out forwards;
+  animation-delay: 3s;
+}
+
+
 #contato {
   background-color: #0d0d0d;
   padding-top: 1 rem;
