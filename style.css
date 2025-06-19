@@ -240,13 +240,14 @@ section {
 
 .sobre-imagem {
   flex: 1;
+  max-width: 300px;
   display: flex;
-  align-items: stretch;
+  align-items: center;
 }
 
 .sobre-imagem img {
   width: 100%;
-  height: 100%;
+  height: auto;
   transform: translateX(20%);
   object-fit: cover;
   border-radius: 16px;
@@ -339,84 +340,6 @@ section {
 /* PROJETOS CARROSSEL */
 /* ===================== SEÇÃO PROJETOS ===================== */
 
-@media (max-width: 768px) {
-  /* Garantir que nenhum elemento exceda a tela */
-  body, html {
-    overflow-x: hidden;
-    max-width: 100vw;
-  }
-  .carousel-wrapper {
-    overflow-x: hidden;
-    padding: 0;
-  }
-
-  /* Carrossel Projetos */
-  .carousel-track {
-    overflow-x: auto !important;
-    padding: 0 5px;
-  }
-  .carousel-container {
-    transform: scale(0.6);
-    transform-origin: top center;
-    gap: 20px;
-    padding: 0; /* remova para não causar deslocamento */
-    margin: 0 auto;
-    flex-wrap: nowrap;
-    display: flex;
-  }
-  .carousel {
-    max-width: 100vh;
-    overflow-x: auto;
-    padding: 0;
-  }
-  #projetos {
-    overflow-x: hidden;
-    padding: 60px 10px;
-  }
-  #projetos h2 {
-    padding-top: 15vh;
-    font-size: 39px !important;
-    width: 90vw;
-    text-align: center;
-    margin: 0 auto;
-  }
-  #projetos h3 {
-    width: 100vw !important;
-    margin: 0;
-    text-align: left !important;
-  }
-  .project-description {
-    width: 90vw !important;
-  }
-  #projetos p {
-    margin: 0 auto;
-    text-align: center;
-  }
-  .projeto-card {
-    flex: 0 0 auto;
-    min-width: 80vw; /* ou 90vw */
-    max-width: 80vw;
-    flex-shrink: 0;
-
-  }
-  .projeto-card img {
-    width: 100%;           /* a imagem encolhe junto com o card */
-    height: auto;          /* mantém proporção */
-  }
-  .carousel-track {
-    overflow-x: auto !important;
-    padding: 0 5px;
-    padding-right: 0px; /* espaço extra para exibir o último card */
-  }
-  .projeto-card p {
-    padding: 0 0px;
-    box-sizing: border-box;
-    text-align: justify;
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0 !important;
-  }
-}
 
 #projetos {
   background:
@@ -831,6 +754,71 @@ section {
 
 .image-wrapper:hover img {
   transform: scale(1.0);
+}
+@media (max-width: 768px) {
+  /* Garantir que nenhum elemento exceda a tela */
+  body, html {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  .carousel-wrapper {
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /*isso é o que faz deslizar para o lado a tela */
+  .carousel-track {
+    overflow-x: auto !important;
+    padding-left: 150px; /* Força o espaço antes do primeiro card */
+    scroll-padding-left: 20px; /* Faz o scroll iniciar com um "respiro" */
+  }
+  .carousel-container {
+    display: flex;
+    gap: 10px;
+  }
+  .carousel {
+  }
+  #projetos {
+  }
+  #projetos h2 { /* titulo "projetos em destaque" */
+    padding-top: 15vh;
+    font-size: 39px !important;
+    width: 90vw;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .card-header h3 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.2; /* Altura de linha consistente */
+  }
+  .project-description { /* texto abaixo do titulo do menu */
+    width: 90vw !important;
+  }
+  #projetos p {
+    margin: 0 auto;
+    text-align: justify;
+  }
+  .projeto-card {
+    min-width: 60%; /* Em vez de 100%, deixa menor para caber mais na tela */
+    max-width: 60%;
+    min-height: 55%; /* Em vez de 100%, deixa menor para caber mais na tela */
+    max-height: 55%;
+
+  }
+  .projeto-card img {
+    width: 100%;
+    height: 100%; /* Se quiser, ajusta a imagem também */
+  }
+  .projeto-card p {
+    padding: 0 0px;
+    box-sizing: border-box;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 !important;
+  }
 }
 
 
