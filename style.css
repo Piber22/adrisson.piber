@@ -769,13 +769,20 @@ section {
 
   /*isso é o que faz deslizar para o lado a tela */
   .carousel-track {
-    overflow-x: auto !important;
-    padding-left: 150px; /* Força o espaço antes do primeiro card */
-    scroll-padding-left: 20px; /* Faz o scroll iniciar com um "respiro" */
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 16px;
+    scroll-padding-right: 16px;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 0;
   }
   .carousel-container {
     display: flex;
+    min-width: max-content;
     gap: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .carousel {
   }
@@ -801,11 +808,9 @@ section {
     text-align: justify;
   }
   .projeto-card {
-    min-width: 60%; /* Em vez de 100%, deixa menor para caber mais na tela */
-    max-width: 60%;
-    min-height: 55%; /* Em vez de 100%, deixa menor para caber mais na tela */
-    max-height: 55%;
-
+    flex: 0 0 auto;
+    min-width: 70%;
+    scroll-snap-align: start;
   }
   .projeto-card img {
     width: 100%;
