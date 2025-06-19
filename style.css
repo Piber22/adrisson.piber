@@ -114,6 +114,38 @@ nav ul li a.active {
   }
 }
 
+/* ===================== ANIMAÇÕES HERO ===================== */
+
+/* Animação geral de fade + slide up */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação específica para a seta (com rotação fixa) */
+@keyframes fadeSlideUpArrow {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) rotate(-45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+/* Aparecer os textos com delay escalonado */
+.hero-text > * {
+  opacity: 0;
+  animation: fadeSlideUp 2s ease-out forwards;
+}
+
 /* HERO */
 .hero {
   width: 100vw; /* 100% da largura da viewport */
@@ -137,11 +169,7 @@ nav ul li a.active {
   background-position: center;
   background-repeat: no-repeat;
 }
-@media (max-width: 768px) {
-    .hero {
-      padding-top: 25%;
-    }
-}
+
 
 .hero::after {
   content: '';
@@ -162,6 +190,7 @@ nav ul li a.active {
 }
 
 .hero-intro {
+  animation-delay: 0.8s;
   font-size: 20px;
   color: #aaa;
   font-weight: 300;
@@ -169,6 +198,7 @@ nav ul li a.active {
 }
 
 .hero-text h1 {
+  animation-delay: 2.0s;
   color: #00d8ff;
   font-size: 48px;
   font-weight: 500;
@@ -176,6 +206,7 @@ nav ul li a.active {
 }
 
 .hero-subtitle {
+  animation-delay: 3.0s;
   font-size: 18px;
   color: #00d8ff;
   font-weight: 300;
@@ -183,11 +214,15 @@ nav ul li a.active {
 }
 
 .hero-text p {
+
   color: #bfbfbf;
   font-size: 18px;
 }
 
 .down-arrow {
+  opacity: 0;
+  animation: fadeSlideUpArrow 2s ease-out forwards;
+  animation-delay: 4.0s;
   display: block;
   margin: 20px auto 0;
   width: 24px;
@@ -202,6 +237,15 @@ nav ul li a.active {
 .down-arrow:hover {
   transform: translateY(5px) rotate(-45deg);
 }
+@media (max-width: 768px) {
+    .hero {
+      padding-top: 25%;
+    }
+    .hero-text h1 {
+      font-size: 40px;
+      line-height: 1.2;
+    }
+}
 
 /* SECTIONS */
 section {
@@ -210,6 +254,26 @@ section {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+@keyframes fadeInUpSobre {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#sobre > * {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+#sobre.animate > * {
+  animation: fadeInUpSobre 1s ease-out forwards;
 }
 
 #sobre {
@@ -238,12 +302,18 @@ section {
 }
 
 .sobre-imagem {
+  opacity: 0;
+  transform: translateY(40px);
   flex: 1;
   max-width: 300px;
   display: flex;
   align-items: center;
 }
 
+#sobre.animate .sobre-imagem {
+  animation: fadeInUpSobre 2s ease-out forwards;
+  animation-delay: 0.5s; /* delay da imagem */
+}
 .sobre-imagem img {
   width: 100%;
   height: auto;
@@ -253,6 +323,8 @@ section {
 }
 
 .sobre-container {
+  opacity: 0;
+  transform: translateY(40px);
   width: 100%;
   flex: 2;
   background-color: rgba(255,255,255,0.95);
@@ -261,6 +333,11 @@ section {
   text-align: justify;
   padding-left: 6%;
   padding-top: 3.5%;
+}
+
+#sobre.animate .sobre-container {
+  animation: fadeInUpSobre 1s ease-out forwards;
+  animation-delay: 2s; /* delay do texto */
 }
 
 .sobre-container h2 {
