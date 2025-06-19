@@ -151,7 +151,7 @@ nav ul li a.active {
   width: 100vw; /* 100% da largura da viewport */
   position: relative;
   z-index: 1;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1036,13 +1036,13 @@ section {
 #contato {
   background-color: #0d0d0d;
   padding-top: 1 rem;
-  padding-bottom: 0;
+  padding-bottom: 1 rem;
   padding-left: 0;
   padding-right: 0;
 }
 #contato h2 {
   margin-top: 0;
-  margin-bottom: 40px; /* mais espaço abaixo do título */
+  margin-bottom: 10px; /* mais espaço abaixo do título */
   font-size: 39px;
   font-weight: 500;
   color: #00d8ff;  /* cor igual ao projetos */
