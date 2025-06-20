@@ -58,7 +58,7 @@ nav .logo {
 
 nav ul {
   display: flex;
-  gap: 30px;
+  gap: 15px;
   list-style: none;
 }
 
@@ -76,11 +76,15 @@ nav ul li a.active {
 }
 
 .hamburger {
-  display: none;
+  display: none;              /* Continua escondido no desktop */
   flex-direction: column;
+  justify-content: center;
+  align-items: center;        /* Centraliza horizontalmente as spans */
   cursor: pointer;
   gap: 5px;
   padding: 10px;
+  height: 50px;
+  transition: all 0.3s ease;
 }
 .hamburger span {
   display: block;
@@ -88,25 +92,55 @@ nav ul li a.active {
   height: 3px;
   background: #00e0ff;
   border-radius: 2px;
+  transition: all 0.3s ease;
 }
+/* Efeito de transformação para X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
 /* Responsivo - para telas até 768px */
 @media (max-width: 768px) {
   nav ul {
-    max-width: 100%;
-    display: none; /* Esconder menu */
-    flex-direction: column;
-    position: absolute;
-    top: 60px; /* ajuste conforme seu header */
-    right: 10px;
-    background: #222; /* fundo escuro para contraste */
+    position: fixed;
+    top: 65px; /* logo abaixo do hamburger, ajuste conforme o seu header */
+    right: 10px; /* alinhado à direita */
+  background: rgba(20, 20, 20, 0.9);
+    width: 100px; /* largura do menu */
+    max-height: 0;
+    overflow: hidden;
     border-radius: 8px;
-    padding: 10px;
-    width: 150px;
-    z-index: 999;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    transition: max-height 3s ease, opacity 0.4s ease;
+    opacity: 0;
+    z-index: 9999;
+    flex-direction: column; /* lista vertical */
+    padding: 20px;
+    backdrop-filter: blur(10px);
   }
 
   nav ul.active {
-    display: flex; /* Mostrar menu ao clicar */
+    max-height: 250px;
+    opacity: 1;
+  }
+  nav ul li a {
+    display: block;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 200;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
   }
 
   .hamburger {
@@ -239,7 +273,8 @@ nav ul li a.active {
 }
 @media (max-width: 768px) {
     .hero {
-      padding-top: 25%;
+      padding-top: 40%;
+      height: 700px;
     }
     .hero-text h1 {
       font-size: 40px;
